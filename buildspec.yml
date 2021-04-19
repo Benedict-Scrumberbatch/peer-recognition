@@ -8,9 +8,9 @@ phases:
     commands: 
       - git submodule update --init --recursive
  
- artifacts:
+artifacts:
   files:
     - '**/*'
-   base-directory: peer-recognition
-   name: deployment-build-artifacts
-   discard-paths: no
+  base-directory: peer-recognition
+  name: deployment-build-artifacts
+  discard-paths: no

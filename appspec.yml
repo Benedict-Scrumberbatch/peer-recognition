@@ -1,6 +1,6 @@
 version: 0.0
 os: linux
 files:
-   - source: /
-     destination: /var/www/html/app
+   - source: /peer-recognition-backend/dist
+     destination: /var/www/html/app/backend/build
 

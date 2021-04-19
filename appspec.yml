@@ -3,4 +3,6 @@ os: linux
 files:
    - source: /peer-recognition-backend/dist
      destination: /var/www/html/app/backend/build
+   - source: /peer-recognition/build
+     destination: /var/www/html/app/frontend/build
 

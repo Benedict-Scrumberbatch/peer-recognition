@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
    - source: /peer-recognition-backend/
-     destination: /home/ubuntu/app/frontend
+     destination: /home/ubuntu/app/backend
    - source: /peer-recognition/
      destination: /home/ubuntu/app/frontend
 # hooks:

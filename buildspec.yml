@@ -4,10 +4,10 @@ env:
   git-credential-helper: yes
   
 phases:
-  pre_build:
-    commands: 
-      - git submodule init
-      - git submodule update --init --recursive
+#   pre_build:
+#     commands: 
+#       - git submodule init
+#       - git submodule update --init --recursive
  
 artifacts:
   files:

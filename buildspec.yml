@@ -11,6 +11,5 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: peer-recognition
   name: deployment-build-artifacts
   discard-paths: no

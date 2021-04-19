@@ -19,6 +19,6 @@ phases:
       - cd .. 
 artifacts:
   files:
-    - 'peer-recognition-backend/dist/**/*'
+    - '**/*'
   name: deployment-build-artifacts
   discard-paths: no

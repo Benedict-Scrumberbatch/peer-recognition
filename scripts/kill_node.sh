@@ -1,1 +1,2 @@
-j
+#!/bin/bash
+killall node

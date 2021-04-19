@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-   - source: /peer-recognition-backend/dist
-     destination: /var/www/html/app/backend/build
-   - source: /peer-recognition/build
-     destination: /var/www/html/app/frontend/build
+   - source: /peer-recognition-backend/
+     destination: /var/www/html/app/backend/
+   - source: /peer-recognition/
+     destination: /var/www/html/app/frontend/
 

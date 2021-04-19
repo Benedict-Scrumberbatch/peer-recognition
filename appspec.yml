@@ -6,8 +6,8 @@ files:
    - source: /peer-recognition/
      destination: /var/www/html/app/frontend/
 hooks:
-   ApplicationStop:
-      - location: /scripts/kill_node.sh
+#    ApplicationStop:
+#       - location: /scripts/kill_node.sh
    ApplicationStart:
       - location: /scripts/start_backend.sh
       - location: /scripts/start_frontend.sh

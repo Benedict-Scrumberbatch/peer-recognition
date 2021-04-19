@@ -10,10 +10,20 @@ phases:
       - git submodule update --init --recursive
   install:
     commands:
+      - cd peer-recognition
       - npm install
+      - cd ..
+      - cd peer-recognition-backend
+      - npm install
+      - cd ..
+  build:
+    commands:
+      - cd peer-recognition-backend
+      - nest build
+      - cd ..
  
 artifacts:
   files:
-    - '**/*'
+    - 'dist/**/*'
   name: deployment-build-artifacts
   discard-paths: no

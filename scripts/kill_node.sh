@@ -1,3 +1,3 @@
 #!/bin/bash
-killall node || true &> /dev/null
+killall node || true 2> /dev/null
 true

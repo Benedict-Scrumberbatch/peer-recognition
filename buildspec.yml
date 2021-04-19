@@ -16,7 +16,8 @@ phases:
       - cd ..
       - cd peer-recognition
       - npm install
-      - cd .. 
+      - npm run build
+      - cd ..
 artifacts:
   files:
     - '**/*'

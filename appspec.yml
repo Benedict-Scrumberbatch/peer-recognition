@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
    - source: /peer-recognition-backend/
-     destination: /var/www/html/app/backend/
+     destination: /home/ubuntu/app/frontend
    - source: /peer-recognition/
-     destination: /home/ubuntu/app
+     destination: /home/ubuntu/app/frontend
 # hooks:
 #    ApplicationStop:
 #       - location: /scripts/kill_node.sh

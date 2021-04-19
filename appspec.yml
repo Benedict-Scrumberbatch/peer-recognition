@@ -5,4 +5,12 @@ files:
      destination: /var/www/html/app/backend/
    - source: /peer-recognition/
      destination: /var/www/html/app/frontend/
+hooks:
+   ApplicationStop:
+      commands:
+         - killall node
+   ApplicationStart:
+      commands:
+         - cd backend
+         - npm run start:prod
 

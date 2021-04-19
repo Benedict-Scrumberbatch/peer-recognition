@@ -4,7 +4,7 @@ files:
    - source: /peer-recognition-backend/
      destination: /var/www/html/app/backend/
    - source: /peer-recognition/
-     destination: /var/www/html/app/frontend/
+     destination: /home/ubuntu/app
 # hooks:
 #    ApplicationStop:
 #       - location: /scripts/kill_node.sh

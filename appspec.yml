@@ -7,10 +7,8 @@ files:
      destination: /var/www/html/app/frontend/
 hooks:
    ApplicationStop:
-      commands:
-         - killall node
+      - location: /scripts/kill_node.sh
    ApplicationStart:
-      commands:
-         - cd backend
-         - npm run start:prod
+      - location: /scripts/start_backend.sh
+      - location: /scripts/start_frontend.sh
 

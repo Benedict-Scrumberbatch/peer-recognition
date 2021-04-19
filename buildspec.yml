@@ -12,7 +12,7 @@ phases:
     commands:
       - cd peer-recognition-backend
       - npm install
-      - npm build
+      - npm run build
       - cd ..
       - cd peer-recognition
       - npm install

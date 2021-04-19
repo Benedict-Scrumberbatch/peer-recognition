@@ -6,6 +6,7 @@ env:
 phases:
   pre_build:
     commands: 
+      - git submodule init
       - git submodule update --init --recursive
  
 artifacts:

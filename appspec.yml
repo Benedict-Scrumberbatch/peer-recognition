@@ -1,8 +1,13 @@
 version: 0.0
 os: linux
 files:
-   - source: /peer-recognition-backend/dist
-     destination: /var/www/html/app/backend/build
-   - source: /peer-recognition/build
-     destination: /var/www/html/app/frontend/build
-
+   - source: /peer-recognition-backend/
+     destination: /home/ubuntu/app/backend
+   - source: /peer-recognition/
+     destination: /home/ubuntu/app/frontend
+# hooks:
+#    ApplicationStop:
+#       - location: /scripts/kill_node.sh
+#    ApplicationStart:
+#       - location: /scripts/start_backend.sh
+#       - location: /scripts/start_frontend.sh

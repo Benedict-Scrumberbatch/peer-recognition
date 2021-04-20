@@ -6,7 +6,7 @@ files:
    - source: /peer-recognition/
      destination: /home/ubuntu/app/frontend
    - source: ./
-     destinations: /home/ubuntu/app
+     destination: /home/ubuntu/app
 hooks:
 #    ApplicationStop:
 #       - location: /scripts/kill_node.sh

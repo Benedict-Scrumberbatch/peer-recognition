@@ -5,9 +5,9 @@ files:
      destination: /home/ubuntu/app/backend
    - source: /peer-recognition/
      destination: /home/ubuntu/app/frontend
-# hooks:
+hooks:
 #    ApplicationStop:
 #       - location: /scripts/kill_node.sh
-#    ApplicationStart:
-#       - location: /scripts/start_backend.sh
-#       - location: /scripts/start_frontend.sh
+   ApplicationStart:
+      - location: /scripts/start_fullstack_docker.sh
+      

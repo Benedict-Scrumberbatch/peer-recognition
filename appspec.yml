@@ -8,8 +8,8 @@ files:
    - source: ./
      destination: /home/ubuntu/app
 hooks:
-#    ApplicationStop:
-#       - location: /scripts/set_up.sh
+   ApplicationStop:
+      - location: /scripts/set_up.sh
    ApplicationStart:
       - location: /scripts/start_fullstack_docker.sh
       

@@ -15,3 +15,4 @@ sudo snap install docker
 sudo apt  install docker.io
 sudo usermod -aG docker ubuntu
 su -s ubuntu
+docker-compose down

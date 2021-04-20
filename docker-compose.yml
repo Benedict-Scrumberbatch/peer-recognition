@@ -1,0 +1,46 @@
+version: '3'
+services:
+  # Create frontend container
+  frontend: # Name of our service
+    build: ./peer-recognition # path to dockerfile
+    ports: # Port binding to host from docker container
+      - "3000:3000" # Bind port 3000 of host to 3000 of container
+    container_name: frontend-docker
+    volumes:
+      - "./peer-recognition:/app"
+    depends_on:
+      - backend
+    restart: always # What to do if container crashes
+    links:
+      - backend
+
+  # Create backend container
+  backend:
+    # Create backend container  
+    build: ./peer-recognition-backend
+    ports:
+      - "4200:4200"
+    container_name: backend-docker
+    restart: always
+    volumes:
+      - "./peer-recognition-backend:/app"
+    depends_on:
+      - database
+    links:
+      - database
+
+  # Create database container
+  database:
+    image: "postgres" # use latest official postgres version
+    ports:
+      - "5432:5432"
+    volumes:
+      - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+    environment:
+      POSTGRES_USER: "peer-recognition-user"
+      POSTGRES_PASSWORD: "peer-recognition-password"
+      POSTGRES_DB: "peer-recognition"
+
+volumes:
+  database-data: # named volumes can be managed easier using docker-compose
+              

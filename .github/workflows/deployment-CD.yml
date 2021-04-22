@@ -28,6 +28,7 @@ jobs:
       - run: git submodule init
       - run: git submodule update --init --recursive
       - run: docker-compose build
+      - run: docker pull postgres
       - run: docker images
 #       - run: npm run docs
 # #       - run: npm run test

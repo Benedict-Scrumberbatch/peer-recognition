@@ -1,13 +1,11 @@
 version: 0.0
 os: linux
 files:
-   - source: /peer-recognition-backend/
-     destination: /home/ubuntu/app/backend
-   - source: /peer-recognition/
-     destination: /home/ubuntu/app/frontend
-# hooks:
-#    ApplicationStop:
-#       - location: /scripts/kill_node.sh
-#    ApplicationStart:
-#       - location: /scripts/start_backend.sh
-#       - location: /scripts/start_frontend.sh
+   - source: ./
+     destination: /home/ubuntu/app
+hooks:
+   ApplicationStop:
+      - location: /scripts/set_up.sh
+   ApplicationStart:
+      - location: /scripts/start_fullstack_docker.sh
+      

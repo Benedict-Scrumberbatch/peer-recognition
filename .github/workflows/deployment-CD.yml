@@ -23,13 +23,16 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          submodule: true
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.5
-      - run: git submodule init
-      - run: git submodule update --init --recursive
-      - run: docker-compose build
-      - run: docker pull postgres
-      - run: docker images
+      - run: docker app init peer-reognition-deployment --compose-file docker-compose.yml
+#       - run: git submodule init
+#       - run: git submodule update --init --recursive
+#       - run: docker-compose build
+#       - run: docker pull postgres
+#       - run: docker images
 #       - run: npm run docs
 # #       - run: npm run test
 #       - name: GitHub Pages

@@ -33,7 +33,7 @@ jobs:
       - name: Turn on Experimental Docker Features
         run: |
           export DOCKER_CLI_EXPERIMENTAL=enabled
-          sudo systemctl docker restart
+          sudo systemctl restart docker
           docker version -f '{{.Server.Experimental}
 #       - run: docker --version
       - run: docker app init --help

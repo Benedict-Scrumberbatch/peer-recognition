@@ -27,7 +27,15 @@ jobs:
           submodule: true
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.5
-      - run: docker --version
+      - name: Docker Experimental Status
+        run: |
+          docker version -f '{{.Server.Experimental}}'
+      - name: Turn on Experimental Docker Features
+        run: |
+          echo $'{\n    "experimental": true\n}' | sudo tee /etc/docker/daemon.json
+          sudo service docker restart
+          docker version -f '{{.Server.Experimental}
+#       - run: docker --version
       - run: docker app init --help
       - run: docker app init peer-reognition-deployment --compose-file docker-compose.yml
 #       - run: git submodule init

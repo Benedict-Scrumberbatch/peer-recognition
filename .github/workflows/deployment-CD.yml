@@ -36,13 +36,10 @@ jobs:
           mkdir -p ~/.docker
           echo $'{\n  "experimental": "enabled"\n}' | sudo tee ~/.docker/config.json
           sudo service docker restart
-          docker version -f '{{.Client.Experimental}}'
-          docker version -f '{{.Server.Experimental}}'
       - name: Docker Experimental Status
         run: |
           docker version -f '{{.Server.Experimental}}'
-      - run: docker app init --help
-      - run: docker app init peer-reognition-deployment --compose-file docker-compose.yml
+          docker app init peer-reognition-deployment --compose-file docker-compose.yml
 #       - run: git submodule init
 #       - run: git submodule update --init --recursive
 #       - run: docker-compose build

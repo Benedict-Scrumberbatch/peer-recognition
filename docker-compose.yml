@@ -9,7 +9,7 @@ services:
       - "3000:3000" # Bind port 3000 of host to 3000 of container
     container_name: frontend-docker
     volumes:
-      - "./peer-recognition:/app"
+      - "./peer-recognition:/app/frontend"
     depends_on:
       - backend
     restart: always # What to do if container crashes
@@ -27,7 +27,7 @@ services:
     container_name: backend-docker
     restart: always
     volumes:
-      - "./peer-recognition-backend:/app"
+      - "./peer-recognition-backend:/app/backend"
     depends_on:
       - database
     links:

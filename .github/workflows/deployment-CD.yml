@@ -32,8 +32,12 @@ jobs:
           docker version -f '{{.Server.Experimental}}'
       - name: Turn on Experimental Docker Features
         run: |
-          export DOCKER_CLI_EXPERIMENTAL=enabled
-          sudo systemctl restart docker
+          echo $'{\n  "experimental": true\n}' | sudo tee /etc/docker/daemon.json
+          mkdir -p ~/.docker
+          echo $'{\n  "experimental": "enabled"\n}' | sudo tee ~/.docker/config.json
+          sudo service docker restart
+          docker version -f '{{.Client.Experimental}}'
+          docker version -f '{{.Server.Experimental}}'
       - name: Docker Experimental Status
         run: |
           docker version -f '{{.Server.Experimental}}'

@@ -45,6 +45,7 @@ jobs:
           curl -fsSL --output "/tmp/docker-app-${OSTYPE}.tar.gz" "https://github.com/docker/app/releases/download/v0.8.0/docker-app-${OSTYPE}.tar.gz"
           tar xf "/tmp/docker-app-${OSTYPE}.tar.gz" -C /tmp/
           mkdir -p ~/.docker/cli-plugins && cp "/tmp/docker-app-plugin-${OSTYPE}" ~/.docker/cli-plugins/docker-app
+      - run: docker swarm init
       - run: docker app init peer-recognition-full-stack --compose-file docker-compose.yml --single-file
       - run: docker app install --name peer-recognition-full-stack-localhost-docker-image
       - run: docker app push peer-recognition-full-stack-localhost-docker-image --tag ghcr.io/benedict-scrumberbatch/peer-recognition-full-stack-localhost-docker-image

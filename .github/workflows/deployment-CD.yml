@@ -44,6 +44,8 @@ jobs:
           curl -fsSL --output "/tmp/docker-app-${OSTYPE}.tar.gz" "https://github.com/docker/app/releases/download/v0.8.0/docker-app-${OSTYPE}.tar.gz"
           tar xf "/tmp/docker-app-${OSTYPE}.tar.gz" -C /tmp/
           mkdir -p ~/.docker/cli-plugins && cp "/tmp/docker-app-plugin-${OSTYPE}" ~/.docker/cli-plugins/docker-app
+      - run: docker app --help
+      - run: docker app build --help
       - run: docker app init peer-reognition-deployment --compose-file docker-compose.yml
       - run: docker app build . -t ghcr.io/benedict-scrumberbatch/peer-recognition-deployment-full-stack-docker-app
       - run: docker app push ghcr.io/benedict-scrumberbatch/peer-recognition-deployment-full-stack-docker-app

@@ -32,7 +32,7 @@ jobs:
           docker version -f '{{.Server.Experimental}}'
       - name: Turn on Experimental Docker Features
         run: |
-          echo $'{\n  "experimental": true\n}' | sudo tee /etc/docker/daemon.json
+          echo $'{\n  "experimental": true,\n  "features": {\n    "buildkit": true\n  }\n}' | sudo tee /etc/docker/daemon.json
           mkdir -p ~/.docker
           echo $'{\n  "experimental": "enabled"\n}' | sudo tee ~/.docker/config.json
           sudo service docker restart

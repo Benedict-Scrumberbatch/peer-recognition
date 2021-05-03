@@ -2,7 +2,7 @@ version: '3.6'
 services:
   # Create frontend container
   frontend: # Name of our service
-    image: peer-recognition-deployment_frontend
+    image: ghcr.io/benedict-scrumberbatch/peer-recognition-frontend-localhost-docker-image:latest
     build: ./peer-recognition # path to dockerfile
     container_name: peer-recognition-deployment-frontend-container
     ports: # Port binding to host from docker container
@@ -19,7 +19,7 @@ services:
   # Create backend container
   backend:
     # Create backend container  
-    image: peer-recognition-deployment_backend
+    image: ghcr.io/benedict-scrumberbatch/peer-recognition-backend-localhost-docker-image:latest
     build: ./peer-recognition-backend
     container_name: peer-recognition-deployment-backend-container
     ports:
@@ -35,7 +35,7 @@ services:
 
   # Create database container
   database:
-    image: peer-recognition-deployment_database
+    image: ghcr.io/benedict-scrumberbatch/peer-recognition-database-docker-image:latest
     build: ./peer-recognition-backend/docker-db-build
     container_name: peer-recognition-deployment-database-container
     ports:

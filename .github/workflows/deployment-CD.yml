@@ -54,8 +54,8 @@ jobs:
       - name: Log into registry
         # This is where you will update the PAT to GITHUB_TOKEN
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-      - run: docker app install peer-recognition-full-stack.dockerapp --name peer-recognition-full-stack-localhost-docker-image --target ghcr.io/benedict-scrumberbatch/peer-recognition-full-stack-localhost-docker-image:latest
-      - run: docker app status peer-recognition-full-stack-localhost-docker-image
+      - run: docker app install peer-recognition-full-stack.dockerapp --name ghcr.io/benedict-scrumberbatch/peer-recognition-full-stack-localhost-docker-image:latest
+      - run: docker app status ghcr.io/benedict-scrumberbatch/peer-recognition-full-stack-localhost-docker-image:latest
 #       - name: Login to GitHub Container Registry
 #         uses: docker/login-action@v1
 #         with:

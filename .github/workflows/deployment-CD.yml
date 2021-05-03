@@ -63,4 +63,4 @@ jobs:
 #           username: Benedict-Scrumberbatch
 #           password: ${{ secrets.GITHUB_TOKEN }}
  
-      - run: docker app push peer-recognition-full-stack.dockerapp --tag ghcr.io/benedict-scrumberbatch/peer-recognition-full-stack-localhost-docker-image:latest
+      - run: docker app push peer-recognition-full-stack-localhost-docker-image --tag ghcr.io/benedict-scrumberbatch/peer-recognition-full-stack-localhost-docker-image:latest

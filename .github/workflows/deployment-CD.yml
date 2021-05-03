@@ -47,7 +47,12 @@ jobs:
           mkdir -p ~/.docker/cli-plugins && cp "/tmp/docker-app-plugin-${OSTYPE}" ~/.docker/cli-plugins/docker-app
       - run: docker swarm init
       - run: docker app init peer-recognition-full-stack --compose-file docker-compose.yml --single-file
-      - run: docker app install --name peer-recognition-full-stack-localhost-docker-image
+      - run: ls
+      - run: cat peer-recognition-full-stack.dockerapp
+      - run: docker app inspect peer-recognition-full-stack.dockerapp
+      - run: docker app valdate peer-recognition-full-stack.dockerapp
+      - run: docker app install peer-recognition-full-stack.dockerapp --name peer-recognition-full-stack-localhost-docker-image
+      - run: docker app status peer-recognition-full-stack-localhost-docker-image
 #       - name: Login to GitHub Container Registry
 #         uses: docker/login-action@v1
 #         with:

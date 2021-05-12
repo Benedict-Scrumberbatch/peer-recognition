@@ -1,0 +1,6 @@
+[submodule "peer-recognition-frontend"]
+	path = peer-recognition-frontend
+	url = https://github.com/Benedict-Scrumberbatch/peer-recognition-frontend.git
+[submodule "peer-recognition-backend"]
+	path = peer-recognition-backend
+	url = https://github.com/Benedict-Scrumberbatch/peer-recognition-backend.git
